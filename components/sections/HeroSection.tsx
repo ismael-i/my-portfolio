@@ -4,12 +4,57 @@ import { motion } from 'framer-motion'
 import { Button } from '../ui/button'
 import { Card } from '@/src/components/ui/card'
 import { CardContent } from '@/src/components/ui/card'
+import { useEffect, useState } from 'react'
 
 interface HeroSectionProps {
   onContactClick: () => void
 }
 
 export function HeroSection({ onContactClick }: HeroSectionProps) {
+  const texts = [
+    "Transforming Concepts into Seamless User Experiences",
+    "Building Scalable Modern Web Applications",
+    "Empowering Businesses through Digital Innovation",
+  ];
+
+  const [index, setIndex] = useState(0); // index du texte actuel
+  const [subIndex, setSubIndex] = useState(0); // index du caractère actuel
+  const [deleting, setDeleting] = useState(false); // si on efface
+  const [blink, setBlink] = useState(true); // curseur clignotant
+
+  // vitesse de frappe / effacement
+  const typingSpeed = deleting ? 40 : 100;
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      const currentText = texts[index];
+
+      if (!deleting && subIndex === currentText.length) {
+        // pause avant effacement
+        setTimeout(() => setDeleting(true), 1200);
+        return;
+      }
+
+      if (deleting && subIndex === 0) {
+        // passer au texte suivant
+        setDeleting(false);
+        setIndex((prev) => (prev + 1) % texts.length);
+        return;
+      }
+
+      // avancer ou reculer selon l'état
+      setSubIndex((prev) => prev + (deleting ? -1 : 1));
+    }, typingSpeed);
+
+    return () => clearTimeout(timeout);
+  }, [subIndex, deleting]);
+
+  // clignotement du curseur "|"
+  useEffect(() => {
+    const blinkInterval = setInterval(() => setBlink((prev) => !prev), 800);
+    return () => clearInterval(blinkInterval);
+  }, []);
+
   return (
     <section className="relative flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8">
       <motion.div
@@ -28,7 +73,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         className="relative"
       >
         <motion.h1
-          className="font-['Inter',Helvetica] font-bold text-4xl md:text-6xl lg:text-7xl text-center leading-tight max-w-4xl px-4"
+          className="font-['Inter',Helvetica] font-bold text-2xl md:text-2xl lg:text-6xl text-center leading-tight max-w-4xl px-4"
           animate={{
             backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
           }}
@@ -45,8 +90,14 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
             backgroundClip: 'text',
           }}
         >
-          Transforming Concepts into Seamless{' '}
-          <span className="text-[#cbacf9]">User Experiences</span>
+          {texts[index].substring(0, subIndex)}
+          <motion.span
+            animate={{ opacity: blink ? 1 : 0 }}
+            transition={{ duration: 0.8, repeat: Infinity }}
+            className="ml-1 text-[#cbacf9] text-2xl"
+          >
+            |
+          </motion.span>
         </motion.h1>
       </motion.div>
 
@@ -56,7 +107,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         transition={{ duration: 0.8, delay: 0.6 }}
         className="mt-8 md:mt-12 font-['Inter',Helvetica] font-normal text-[#e4ecff] text-lg md:text-2xl text-center max-w-2xl px-4"
       >
-        Hi! I'm John Doe, a Next.js Developer based in Russia
+        Hi! I'm Ismael Razafindramboly, Developer fullstack JS based in Madagascar
       </motion.div>
 
       <motion.div

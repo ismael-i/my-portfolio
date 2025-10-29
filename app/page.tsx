@@ -28,7 +28,7 @@ export default function Home() {
         />
       </div>
 
-      <img
+      {/* <img
         className="fixed right-0 top-0 w-[572px] h-[608px] pointer-events-none z-0 opacity-60"
         alt="Spotlight"
         src="/spotlight-1.svg"
@@ -38,7 +38,7 @@ export default function Home() {
         className="fixed left-0 top-0 w-[572px] h-[608px] pointer-events-none z-0 opacity-60"
         alt="Spotlight"
         src="/spotlight.svg"
-      />
+      /> */}
 
       <Navigation onContactClick={() => setIsContactModalOpen(true)} />
 

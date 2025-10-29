@@ -2,20 +2,33 @@ import React from "react";
 import { Badge } from "../../ui/badge";
 import { Button } from "../../ui/button";
 import { Card, CardContent } from "../../ui/card";
+import { motion } from "framer-motion";
 
 const techStackColumn1 = [
     { name: "ReactJS" },
     { name: "Express" },
-    { name: "Typescript" },
-    { name: "NextJS" },
+    { name: "TypeScript" },
+    { name: "Next.js" },
+    { name: "Node.js" },
+    { name: "PHP" },
+    { name: "Ruby on Rails" },
+    { name: "TypeScript" },
+    { name: "React Native" },
 ];
 
 const techStackColumn2 = [
-    { name: "ReactJS" },
-    { name: "VueJS" },
-    { name: "NuxtJS" },
-    { name: "GraphQL" },
+    { name: "MongoDB" },
+    { name: "Firebase" },
+    { name: "TailwindCSS" },
+    { name: "Socket.IO" },
+    { name: "Prisma" },
+    { name: "Symfony" },
+    { name: "Laravel" },
+    { name: "IA AGENT" },
+    { name: "Python" },
+
 ];
+
 
 const locationBadges = [
     { name: "USA", position: "top-[calc(50.00%_-_24px)] left-[calc(50.00%_-_220px)]", },
@@ -79,30 +92,47 @@ export const PortfolioSection = () => {
                                 <div className="absolute -top-2 lg:-top-5 left-1/2 lg:left-[211px] transform -translate-x-1/2 lg:translate-x-0 w-48 md:w-64 lg:w-[290px] h-32 md:h-40 lg:h-[295px] flex gap-2 lg:gap-[9.6px]">
                                     <div className="w-24 md:w-32 lg:w-[140.17px] h-full flex">
                                         <div className="inline-flex w-full h-[268.29px] relative flex-col items-start gap-2 lg:gap-[12.19px]">
-                                            {techStackColumn1.map((tech, index) => (
-                                                <div key={index} className="relative w-full h-12 lg:h-[72.35px]">
-                                                    <div className="relative w-full h-12 lg:h-[72px]">
-                                                        <div className="absolute top-0 left-0 w-full h-full bg-[#10132e] rounded-[6.97px]" />
-                                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [font-family:'Inter',Helvetica] font-semibold text-white text-xs lg:text-[13.9px] text-center tracking-[0] leading-[18.6px] whitespace-nowrap">
-                                                            {tech.name}
-                                                        </div>
+                                            <motion.div
+                                                className="flex flex-col items-center gap-3"
+                                                animate={{ y: ["0%", "-100%"] }}
+                                                transition={{
+                                                    duration: 30,
+                                                    repeat: Infinity,
+                                                    ease: "linear",
+                                                }}
+                                            >
+                                                {[...techStackColumn1, ...techStackColumn1].map((tech, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="w-[140px] h-[50px] bg-[#10132e] rounded-lg flex items-center justify-center text-white text-sm font-semibold"
+                                                    >
+                                                        {tech.name}
                                                     </div>
-                                                </div>
-                                            ))}
+                                                ))}
+                                            </motion.div>
                                         </div>
                                     </div>
                                     <div className="w-24 md:w-32 lg:w-[140.17px] h-full flex overflow-hidden">
                                         <div className="inline-flex mt-[-18px] lg:mt-[-36.0px] w-full h-[268.29px] ml-0 relative flex-col items-start gap-2 lg:gap-[12.19px]">
-                                            {techStackColumn2.map((tech, index) => (
-                                                <div key={index} className="relative w-full h-12 lg:h-[72.35px]">
-                                                    <div className="relative w-full h-12 lg:h-[72px]">
-                                                        <div className="absolute top-0 left-0 w-full h-full bg-[#10132e] rounded-[6.97px]" />
-                                                        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 [font-family:'Inter',Helvetica] font-semibold text-white text-xs lg:text-[13.9px] text-center tracking-[0] leading-[18.6px] whitespace-nowrap">
-                                                            {tech.name}
-                                                        </div>
+                                            <motion.div
+                                                className="flex flex-col items-center gap-3"
+                                                animate={{ y: ["-100%", "0%"] }}
+                                                transition={{
+                                                    duration: 30,
+                                                    repeat: Infinity,
+                                                    ease: "linear",
+                                                }}
+                                            >
+                                                {[...techStackColumn2, ...techStackColumn2].map((tech, i) => (
+                                                    <div
+                                                        key={i}
+                                                        className="w-[140px] h-[50px] bg-[#10132e] rounded-lg flex items-center justify-center text-white text-sm font-semibold"
+                                                    >
+                                                        {tech.name}
                                                     </div>
-                                                </div>
-                                            ))}
+                                                ))}
+                                            </motion.div>
+
                                         </div>
                                     </div>
                                 </div>
