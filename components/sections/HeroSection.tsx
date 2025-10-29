@@ -1,0 +1,168 @@
+'use client'
+
+import { motion } from 'framer-motion'
+import { Button } from '../ui/button'
+import { Card } from '@/src/components/ui/card'
+import { CardContent } from '@/src/components/ui/card'
+
+interface HeroSectionProps {
+  onContactClick: () => void
+}
+
+export function HeroSection({ onContactClick }: HeroSectionProps) {
+  return (
+    <section className="relative flex flex-col items-center pt-32 md:pt-48 px-4 md:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2 }}
+        className="font-['Inter',Helvetica] font-normal text-[#e4ecff] text-xs md:text-base text-center tracking-[4.00px] leading-[19.2px] mb-8 md:mb-12"
+      >
+        DYNAMIC WEB MAGIC WITH NEXT.JS
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative"
+      >
+        <motion.h1
+          className="font-['Inter',Helvetica] font-bold text-4xl md:text-6xl lg:text-7xl text-center leading-tight max-w-4xl px-4"
+          animate={{
+            backgroundPosition: ['0% 50%', '100% 50%', '0% 50%'],
+          }}
+          transition={{
+            duration: 5,
+            repeat: Infinity,
+            ease: 'linear'
+          }}
+          style={{
+            background: 'linear-gradient(90deg, #ffffff 0%, #e4ecff 25%, #cbacf9 50%, #e4ecff 75%, #ffffff 100%)',
+            backgroundSize: '200% auto',
+            WebkitBackgroundClip: 'text',
+            WebkitTextFillColor: 'transparent',
+            backgroundClip: 'text',
+          }}
+        >
+          Transforming Concepts into Seamless{' '}
+          <span className="text-[#cbacf9]">User Experiences</span>
+        </motion.h1>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.6 }}
+        className="mt-8 md:mt-12 font-['Inter',Helvetica] font-normal text-[#e4ecff] text-lg md:text-2xl text-center max-w-2xl px-4"
+      >
+        Hi! I'm John Doe, a Next.js Developer based in Russia
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.8 }}
+        whileHover={{ scale: 1.05 }}
+        whileTap={{ scale: 0.95 }}
+        className="mt-8 md:mt-12"
+      >
+        <Button
+          onClick={onContactClick}
+          className="group relative inline-flex items-center justify-center gap-2.5 px-8 md:px-10 py-5 md:py-[22px] h-auto rounded-[14px] border-none bg-[linear-gradient(90deg,rgba(22,26,49,1)_0%,rgba(6,9,31,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[14px] before:[background:linear-gradient(180deg,rgba(105,113,162,0.4)_0%,rgba(39,42,60,0.5)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none overflow-hidden"
+        >
+          <motion.div
+            className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent"
+            initial={{ x: '-100%' }}
+            whileHover={{ x: '100%' }}
+            transition={{ duration: 0.6 }}
+          />
+          <span className="relative font-['Inter',Helvetica] font-medium text-white text-base md:text-lg tracking-[-0.48px] leading-[21.6px] whitespace-nowrap">
+            See my work
+          </span>
+          <motion.img
+            className="relative w-[13px] h-[13px]"
+            alt="Arrow"
+            src="/arrow.svg"
+            animate={{ x: [0, 5, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+          />
+        </Button>
+      </motion.div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 1, delay: 1 }}
+        className="mt-16 md:mt-24 w-full max-w-5xl px-4"
+      >
+        <motion.div
+          animate={{
+            y: [0, -20, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+          className="relative w-full aspect-video rounded-2xl overflow-hidden shadow-2xl"
+        >
+          <img
+            src="/section-input-container.png"
+            alt="Portfolio showcase"
+            className="w-full h-full object-cover"
+          />
+
+          <div className="absolute inset-0 bg-gradient-to-t from-[#000319] via-transparent to-transparent" >
+            {/* <section className="relative w-full bg-[#000319] rounded-3xl overflow-hidden py-[65px] px-[100px]">
+              <img
+                className="absolute top-0 left-0 w-full h-[900px] object-cover"
+                alt="Background"
+                src="/bg.svg"
+              />
+              <div className="relative flex flex-col w-full max-w-[1240px] mx-auto items-start gap-[39px]">
+                <div className="flex items-start gap-[30px] w-full">
+                  <Card className="flex-1 h-[541px] rounded-xs border-[none] bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)]yy ">
+                    <CardContent className="relative p-0 h-full">
+                      <img
+                        className="absolute top-0 left-0 w-full h-full object-cover"
+                        alt="Collaboration"
+                        src="/image-11.png"
+                      />
+
+                      <h3 className="absolute top-[367px] left-10 w-[393px] [font-family:'Inter',Helvetica] font-bold text-white text-[32px] tracking-[-0.32px] leading-[38.4px]">
+                        I prioritize client collaboration, fostering open communication
+                      </h3>
+
+                      <img
+                        className="absolute top-[343px] left-[506px] w-[140px] h-[49px]"
+                        alt="Group illustration"
+                        src="/group.png"
+                      />
+
+                      <div className="absolute top-[69px] left-[53px] w-[152px] h-[59px] rotate-180">
+                        <img
+                          className="w-[19.56%] h-[41.40%] top-[46.92%] left-[6.92%] absolute -rotate-180"
+                          alt="Speech bubble tail"
+                          src="/vector.svg"
+                        />
+
+                        <img
+                          className="w-[75.22%] h-[49.68%] top-0 left-[23.47%] absolute -rotate-180"
+                          alt="Speech bubble"
+                          src="/vector-1.svg"
+                        />
+                      </div>
+                    </CardContent>
+                  </Card>
+
+                </div>
+              </div>
+            </section> */}
+          </div>
+
+        </motion.div>
+      </motion.div>
+    </section>
+  )
+}
