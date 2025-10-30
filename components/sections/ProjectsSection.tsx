@@ -2,47 +2,76 @@
 
 import { motion } from 'framer-motion'
 import { Card, CardContent } from '../ui/card'
+import Image from 'next/image';
 
 const projects = [
   {
     id: 1,
-    title: 'Video Conferencing App',
-    description: 'Simplify your video conferencing experience with Yoom. Seamlessly connect with colleagues and friends.',
-    image: '/image-4.png',
-    mockup: '/image-8.png',
-    technologies: '/technologies.svg',
-    link: '#',
+    title: 'Grand urban hotel',
+    description: 'This project demonstrates my ability to transform a brand vision into a high-performing and aesthetically successful digital experience, essential for the luxury hospitality sector.',
+    image: '/image.png',
+    mockup: '/ghu-image.png',
+    technologies: [
+      { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+      { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
+      { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+      { src: '/nodejs.svg', alt: 'Node js', id: 'Node' },
+    ],
+    link: 'https://ghu-tana.com',
   },
   {
     id: 2,
-    title: 'AI Image SaaS - Canva Application',
-    description: 'A REAL Software-as-a-Service app with AI features and a payments and credits system using the latest tech stack.',
-    image: '/image-9.png',
-    mockup: '/image-6.png',
-    technologies: '/technologies-2.svg',
+    title: 'Msomo wa mali - Android & IOS Application',
+    description: 'A native financial education mobile app built on the latest React Native stack. Interactive courses and savings/loan simulations ensure complete mastery.',
+    image: '/image.png',
+    mockup: '/iphone-image.png',
+    technologies: [
+      { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+      { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
+      { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+      { src: '/firebase.svg', alt: 'Firebase', id: 'Firebase' },
+    ],
     link: '#',
   },
   {
     id: 3,
-    title: 'Animated Apple Iphone 3D Website',
-    description: 'Recreated the Apple iPhone 15 Pro website, combining GSAP animations and Three.js 3D effects.',
-    image: '/image-10.png',
-    mockup: '/image-11.png',
-    technologies: '/technologies-1.svg',
-    link: '#',
+    title: 'MINUCIA, The communications agency',
+    description: 'Your responsible communication agency. Built with Next.js for sustainable success. See our work, blog, and team.',
+    image: '/image.png',
+    mockup: '/minucia.jpg',
+    technologies: [
+      { src: '/next.svg', alt: 'Next JS', id: 'Next' },
+      { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
+      { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+      { src: '/firebase.svg', alt: 'Firebase', id: 'Firebase' }
+
+    ],
+    link: 'https://minucia-website.vercel.app/',
   },
   {
     id: 4,
-    title: 'Horizon - Banking Platform',
-    description: 'A modern banking platform with a comprehensive dashboard to manage all your financial needs.',
-    image: '/image-12.png',
-    mockup: '/image-13.png',
-    technologies: '/technologies-3.svg',
+    title: 'Elevating Business Operations',
+    description: ' These projects highlight my expertise in building sophisticated enterprise-level applications with Next.js, demonstrating my ability to translate complex business requirements into efficient.',
+    image: '/image.png',
+    mockup: '/edens.png',
+    technologies: [
+      { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+      { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
+      { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+      { src: '/next.svg', alt: 'Next JS', id: 'Next' },
+    ],
     link: '#',
   },
 ]
 
 export function ProjectsSection() {
+  const logos = [
+    { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+    { src: '/firebase.svg', alt: 'Tailwind CSS', id: 'tailwind' }, // Supposons que c'est un "tilde" pour TypeScript
+    { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+    { src: '/next.svg', alt: 'Next JS', id: 'Next' },
+    { src: '/tailwind.svg', alt: 'tailwind', id: 'github' }, // Ou n'importe quel autre logo pour le 5ème
+  ];
   return (
     <section id="projects" className="relative py-20 md:py-32 px-4 md:px-8">
       <motion.div
@@ -71,10 +100,10 @@ export function ProjectsSection() {
               whileHover={{ y: -10, scale: 1.02 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="relative h-full rounded-[23px] overflow-hidden border-none bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[23px] before:[background:linear-gradient(180deg,rgba(54,55,73,0.43)_0%,rgba(54,55,73,0.49)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none group">
+              <Card className="relative h-full rounded-[23px] overflow-hidden border-none bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)]  group">
                 <CardContent className="p-0 flex flex-col">
                   <motion.div
-                    className="relative h-[250px] md:h-[330px] w-full bg-[#13152c] rounded-t-[14px] overflow-hidden"
+                    className="relative h-[250px] md:h-[330px] w-140 bg-[#13152c] rounded-t-[14px] overflow-hidden m-6"
                     whileHover={{ scale: 1.05 }}
                     transition={{ duration: 0.4 }}
                   >
@@ -84,7 +113,7 @@ export function ProjectsSection() {
                       src={project.image}
                     />
                     <motion.img
-                      className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[80%] max-w-[464px] h-auto rounded-[10px] object-cover shadow-2xl"
+                      className="absolute top-2/3 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-5 w-[80%] max-w-[464px] h-auto rounded-[10px] object-cover shadow-2xl"
                       alt={`${project.title} mockup`}
                       src={project.mockup}
                       animate={{
@@ -109,11 +138,28 @@ export function ProjectsSection() {
                     </p>
 
                     <div className="flex items-center justify-between">
-                      <img
+                      {/* <img
                         className="h-8 md:h-10"
                         alt="Technologies"
                         src={project.technologies}
-                      />
+                      /> */}
+                      <div className='flex items-center gap-2.5 mt-5'>
+                        {project.technologies.map((logo) => (
+                          <div
+                            key={logo.id}
+                            className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 border border-white/20 flex-shrink-0"
+                          >
+                            {/* Si vous utilisez Next.js, utilisez <Image /> */}
+                            <Image
+                              src={logo.src}
+                              alt={logo.alt}
+                              width={24} // Ces props sont pour l'optimisation de Next.js
+                              height={24} // La taille visuelle est gérée par le className
+                              className="max-w-[60%] max-h-[60%] object-contain"
+                            />
+                          </div>
+                        ))}
+                      </div>
 
                       <motion.a
                         href={project.link}

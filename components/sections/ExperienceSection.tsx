@@ -6,15 +6,15 @@ import { Card, CardContent } from '../ui/card'
 const experiences = [
   {
     id: 1,
-    title: 'Frontend Engineer Intern',
-    description: 'Assisted in the development of a web-based platform using React.js, enhancing interactivity.',
-    logo: '/-group-.png',
+    title: 'Freelance Next.js Dev Project',
+    description: 'Assisted in the development of a web-based platform using Next.js, enhancing interactivity. ',
+    logo: '/Group.svg',
     mask: '/mask-group.png',
   },
   {
     id: 2,
-    title: 'Mobile App Dev - JSM Tech',
-    description: 'Designed and developed mobile app for both iOS & Android platforms using React Native.',
+    title: 'Fullstack Developer - AFM ART',
+    description: 'Developed web app and deploing using PHP and wordpress.',
     logo: '/frame-5.svg',
     mask: '/mask-group-3.png',
   },
@@ -27,9 +27,9 @@ const experiences = [
   },
   {
     id: 4,
-    title: 'Lead Frontend Developer',
-    description: 'Developed and maintained user-facing features using modern frontend technologies.',
-    logo: '/-group--1.png',
+    title: 'Freelance React/ Node js  Dev Project',
+    description: 'Developed and maintained user-facing features using modern technologies.',
+    logo: '/Group2.svg',
     mask: '/mask-group-1.png',
   },
 ]
@@ -63,7 +63,7 @@ export function ExperienceSection() {
               whileHover={{ scale: 1.03, y: -5 }}
               transition={{ duration: 0.3 }}
             >
-              <Card className="relative h-48 rounded-[23px] border-none bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[23px] before:[background:linear-gradient(180deg,rgba(54,55,73,0.43)_0%,rgba(54,55,73,0.49)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none overflow-hidden group">
+              <Card className="relative h-48 rounded-[23px] border-none bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)]  overflow-hidden group">
                 <img
                   className="absolute -top-1 left-[-22px] w-full max-w-[622px] h-[172px] opacity-30"
                   alt="Background pattern"

@@ -46,17 +46,17 @@ export const PortfolioSection = () => {
                     {/* Collaboration Card */}
                     <Card className="w-full lg:flex-1 h-[300px] md:h-[400px] lg:h-[541px] rounded-[23px] border-[none] m-0 lg:m-2">
                         <CardContent className="relative p-0 h-full">
-                            <img className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" alt="Collaboration" src="/image-11.png" />
+                            <img className="absolute top-0 left-0 w-full h-full object-cover rounded-lg" alt="Collaboration" src="/image-14.png" />
                             <h3 className="absolute top-1/2 lg:top-[367px] left-4 lg:left-10 w-[90%] lg:w-[393px] [font-family:'Inter',Helvetica] font-bold text-white text-xl md:text-2xl lg:text-[32px] tracking-[-0.32px] leading-tight lg:leading-[38.4px]">
                                 I prioritize client collaboration, fostering open communication
                             </h3>
-                            <img className="absolute top-3/4 lg:top-[343px] right-4 lg:left-[506px] w-20 lg:w-[140px] h-7 lg:h-[49px]" alt="Group illustration" src="/group.png" />
+                            {/* <img className="absolute top-3/4 lg:top-[343px] right-4 lg:left-[506px] w-20 lg:w-[140px] h-7 lg:h-[49px]" alt="Group illustration" src="/group.png" /> */}
                             <div className="absolute top-4 lg:top-[69px] left-4 lg:left-[53px] w-24 lg:w-[152px] h-8 lg:h-[59px] rotate-180">
                                 <img className="w-[19.56%] h-[41.40%] top-[46.92%] left-[6.92%] absolute -rotate-180" alt="Speech bubble tail" src="/vector.svg" />
                                 <img className="w-[75.22%] h-[49.68%] top-0 left-[23.47%] absolute -rotate-180" alt="Speech bubble" src="/vector-1.svg" />
-                                <div className="absolute top-6 lg:top-11 left-[calc(50.00%_-_38px)] lg:left-[calc(50.00%_-_76px)] w-6 lg:w-[30px] h-3 lg:h-[15px] flex items-center justify-center rotate-180 [font-family:'Inter',Helvetica] font-medium text-[#0c0e23] text-xs lg:text-[10px] tracking-[-0.48px] leading-[12.0px]">
+                                {/* <div className="absolute top-6 lg:top-11 left-[calc(50.00%_-_38px)] lg:left-[calc(50.00%_-_76px)] w-6 lg:w-[30px] h-3 lg:h-[15px] flex items-center justify-center rotate-180 [font-family:'Inter',Helvetica] font-medium text-[#0c0e23] text-xs lg:text-[10px] tracking-[-0.48px] leading-[12.0px]">
                                     Me
-                                </div>
+                                </div> */}
                             </div>
                         </CardContent>
                     </Card>

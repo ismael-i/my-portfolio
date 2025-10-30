@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion'
 import { Avatar, AvatarImage } from '../ui/avatar'
 import { Card, CardContent } from '../ui/card'
+import Image from 'next/image'
 
 const testimonials = [
   {
@@ -13,6 +14,30 @@ const testimonials = [
     image: '/image-2.png',
     quote: "Collaborating with John was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. John's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, John is the ideal partner.",
   },
+]
+
+
+const logo = [
+  { src: '/next.svg', alt: 'Next JS', id: 'Next' },
+  { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
+  { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
+  { src: '/firebase.svg', alt: 'Firebase', id: 'Firebase' },
+  { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+  { src: '/nodejs.svg', alt: 'Node js', id: 'Node' },
+  { src: 'tech/Socket-io.svg', alt: 'Socket io', id: 'Socket io' },
+  { src: 'tech/Express.svg', alt: 'Express', id: 'Express' },
+
+]
+const logo2 = [
+  { src: '/tech/n8n-color.svg', alt: 'n8n', id: 'n8n' },
+  { src: '/tech/rails.svg', alt: 'rails', id: 'rails' },
+  { src: '/tech/python.svg', alt: 'Python', id: 'python' },
+  { src: '/tech/mysql.svg', alt: 'mysql', id: 'mysql' },
+  { src: '/tech/mongodb.svg', alt: 'Mongo DB', id: 'Mongo' },
+  { src: '/tech/prisma.svg', alt: 'Prisma', id: 'prisma' },
+  { src: '/tech/postgresql.svg', alt: 'Postgres', id: 'postegres' },
+  { src: '/tech/wordpress.svg', alt: 'worpress', id: 'wordpress' },
+
 ]
 
 export function TestimonialsSection() {
@@ -110,7 +135,85 @@ export function TestimonialsSection() {
         transition={{ duration: 0.6, delay: 0.3 }}
         className="flex justify-center mt-16 md:mt-24"
       >
-        <img className="w-full max-w-5xl h-auto px-4" alt="Client logos" src="/logos.svg" />
+        <div className="relative w-full overflow-hidden py-6 bg-gradient-to-r from-[#04071d] to-[#0c0e23]">
+          <motion.div
+            className="flex items-center gap-12"
+            animate={{
+              x: ["0%", "-50%"], // déplacement gauche
+            }}
+            transition={{
+              duration: 15, // vitesse
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{ width: "max-content" }}
+          >
+            {/* On duplique les logos pour boucler sans coupure */}
+            {[...logo, ...logo2, ...logo].map((logo, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[100px] h-[100px] flex items-center justify-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={60}
+                  height={60}
+                  className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Dégradés sur les bords (effet fondu) */}
+          <div className="pointer-events-none absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-[#04071d] to-transparent" />
+          <div className="pointer-events-none absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-[#04071d] to-transparent" />
+        </div>
+
+      </motion.div>
+      {/* carouselle party two  */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true }}
+        transition={{ duration: 0.6, delay: 0.3 }}
+        className="flex justify-center mt-2 md:mt-2"
+      >
+        <div className="relative w-full overflow-hidden py-6 bg-gradient-to-r from-[#04071d] to-[#0c0e23]">
+          <motion.div
+            className="flex items-center gap-12"
+            animate={{
+              x: ["-50%", "0%"], // déplacement gauche
+            }}
+            transition={{
+              duration: 15, // vitesse
+              repeat: Infinity,
+              ease: "linear",
+            }}
+            style={{ width: "max-content" }}
+          >
+            {/* On duplique les logos pour boucler sans coupure */}
+            {[...logo2, ...logo, ...logo2].map((logo, index) => (
+              <div
+                key={index}
+                className="flex-shrink-0 w-[100px] h-[100px] flex items-center justify-center"
+              >
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={60}
+                  height={60}
+                  className="object-contain opacity-90 hover:opacity-100 transition-opacity"
+                />
+              </div>
+            ))}
+          </motion.div>
+
+          {/* Dégradés sur les bords (effet fondu) */}
+          <div className="pointer-events-none absolute top-0 left-0 w-20 h-full bg-gradient-to-r from-[#04071d] to-transparent" />
+          <div className="pointer-events-none absolute top-0 right-0 w-20 h-full bg-gradient-to-l from-[#04071d] to-transparent" />
+        </div>
+
       </motion.div>
     </section>
   )
