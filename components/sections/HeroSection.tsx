@@ -63,7 +63,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="font-['Inter',Helvetica] font-normal text-[#e4ecff] text-xs md:text-base text-center tracking-[4.00px] leading-[19.2px] mb-8 md:mb-12"
       >
-        DYNAMIC WEB MAGIC WITH NEXT.JS
+        DYNAMIC WEB MAGIC
       </motion.div>
 
       <motion.div
