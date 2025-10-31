@@ -34,7 +34,7 @@ export default function Home() {
         src="/spotlight-1.svg"
       />
 
-      <img
+      {/* <img
         className="fixed left-0 top-0 w-[572px] h-[608px] pointer-events-none z-0 opacity-60"
         alt="Spotlight"
         src="/spotlight.svg"

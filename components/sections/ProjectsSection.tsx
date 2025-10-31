@@ -55,10 +55,10 @@ const projects = [
     image: '/image.png',
     mockup: '/edens.png',
     technologies: [
-      { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
+      { src: '/next.svg', alt: 'Next JS', id: 'Next' },
       { src: '/tailwind.svg', alt: 'Tailwind css', id: 'taiwlind' },
       { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
-      { src: '/next.svg', alt: 'Next JS', id: 'Next' },
+      { src: '/tech/Socket-io.svg', alt: 'Socket', id: 'Socket' },
     ],
     link: '#',
   },

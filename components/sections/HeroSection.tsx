@@ -105,7 +105,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8, delay: 0.6 }}
-        className="mt-8 md:mt-12 font-['Inter',Helvetica] font-normal text-[#e4ecff] text-lg md:text-2xl text-center max-w-2xl px-4"
+        className="mt-8 md:mt-16 font-['Inter',Helvetica] font-normal text-[#e4ecff] text-lg md:text-2xl text-center max-w-2xl px-4"
       >
         Hi! I'm Ismael Razafindramboly, Developer fullstack JS based in Madagascar
       </motion.div>
@@ -116,7 +116,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         transition={{ duration: 0.8, delay: 0.8 }}
         whileHover={{ scale: 1.05 }}
         whileTap={{ scale: 0.95 }}
-        className="mt-8 md:mt-12"
+        className="mt-8 md:mt-12 md:mb-15"
       >
         <Button
           onClick={onContactClick}
@@ -141,7 +141,7 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
         </Button>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 1 }}
@@ -165,55 +165,10 @@ export function HeroSection({ onContactClick }: HeroSectionProps) {
           />
 
           <div className="absolute inset-0 bg-gradient-to-t from-[#000319] via-transparent to-transparent" >
-            {/* <section className="relative w-full bg-[#000319] rounded-3xl overflow-hidden py-[65px] px-[100px]">
-              <img
-                className="absolute top-0 left-0 w-full h-[900px] object-cover"
-                alt="Background"
-                src="/bg.svg"
-              />
-              <div className="relative flex flex-col w-full max-w-[1240px] mx-auto items-start gap-[39px]">
-                <div className="flex items-start gap-[30px] w-full">
-                  <Card className="flex-1 h-[541px] rounded-xs border-[none] bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)]yy ">
-                    <CardContent className="relative p-0 h-full">
-                      <img
-                        className="absolute top-0 left-0 w-full h-full object-cover"
-                        alt="Collaboration"
-                        src="/image-11.png"
-                      />
-
-                      <h3 className="absolute top-[367px] left-10 w-[393px] [font-family:'Inter',Helvetica] font-bold text-white text-[32px] tracking-[-0.32px] leading-[38.4px]">
-                        I prioritize client collaboration, fostering open communication
-                      </h3>
-
-                      <img
-                        className="absolute top-[343px] left-[506px] w-[140px] h-[49px]"
-                        alt="Group illustration"
-                        src="/group.png"
-                      />
-
-                      <div className="absolute top-[69px] left-[53px] w-[152px] h-[59px] rotate-180">
-                        <img
-                          className="w-[19.56%] h-[41.40%] top-[46.92%] left-[6.92%] absolute -rotate-180"
-                          alt="Speech bubble tail"
-                          src="/vector.svg"
-                        />
-
-                        <img
-                          className="w-[75.22%] h-[49.68%] top-0 left-[23.47%] absolute -rotate-180"
-                          alt="Speech bubble"
-                          src="/vector-1.svg"
-                        />
-                      </div>
-                    </CardContent>
-                  </Card>
-
-                </div>
-              </div>
-            </section> */}
           </div>
 
         </motion.div>
-      </motion.div>
+      </motion.div> */}
     </section>
   )
 }

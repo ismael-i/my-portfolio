@@ -42,7 +42,12 @@ export const PortfolioSection = () => {
             <div className="relative flex flex-col w-full max-w-[1240px] mx-auto items-start gap-6 md:gap-8 lg:gap-[39px]">
 
                 {/* First Row - Two Cards */}
-                <div className="flex flex-col lg:flex-row items-start gap-6 w-full opacity-100">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col lg:flex-row items-start gap-6 w-full opacity-100">
                     {/* Collaboration Card */}
                     <Card className="w-full lg:flex-1 h-[300px] md:h-[400px] lg:h-[541px] rounded-[23px] border-[none] m-0 lg:m-2">
                         <CardContent className="relative p-0 h-full">
@@ -147,10 +152,15 @@ export const PortfolioSection = () => {
                             </CardContent>
                         </Card>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Second Row - Three Cards */}
-                <div className="flex flex-col lg:flex-row items-center justify-between w-full h-auto lg:h-[390px] gap-6">
+                <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true, margin: '-100px' }}
+                    transition={{ duration: 0.6 }}
+                    className="flex flex-col lg:flex-row items-center justify-between w-full h-auto lg:h-[390px] gap-6">
                     {/* Left Column - Two Cards Stacked */}
                     <div className="flex flex-col w-full lg:w-[351px] items-start gap-4 lg:gap-[30px] h-auto">
                         {/* Tech Enthusiast Card */}
@@ -198,7 +208,7 @@ export const PortfolioSection = () => {
                             </div>
                         </CardContent>
                     </Card>
-                </div>
+                </motion.div>
             </div>
         </section>
     );

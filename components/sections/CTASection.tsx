@@ -32,6 +32,24 @@ export function CTASection({ onContactClick }: CTASectionProps) {
         >
           Reach out to me today and let's discuss how I can help you achieve your goals.
         </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-['Inter',Helvetica] font-normal text-[#c1c2d3] text-base md:text-lg leading-relaxed"
+        >
+          Email: ismaelrazafindramboly@gmail.com
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="font-['Inter',Helvetica] font-normal text-[#c1c2d3] text-base md:text-lg leading-relaxed"
+        >
+          whatsapp: +261 34 76 895 26
+        </motion.p>
 
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}

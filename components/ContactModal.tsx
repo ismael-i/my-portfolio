@@ -31,21 +31,30 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
   }, [isOpen])
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
+    e.preventDefault();
+    setIsSubmitting(true);
 
-    await new Promise(resolve => setTimeout(resolve, 1500))
+    try {
+      const res = await fetch("/api/mailer", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formData),
+      });
 
-    console.log('Form submitted:', formData)
+      if (!res.ok) throw new Error("Erreur lors de l'envoi");
 
-    setSubmitStatus('success')
-    setIsSubmitting(false)
-
-    setTimeout(() => {
-      setFormData({ name: '', email: '', message: '' })
-      setSubmitStatus('idle')
-      onClose()
-    }, 2000)
+      setSubmitStatus("success");
+    } catch (error) {
+      console.error(error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+      setTimeout(() => {
+        setFormData({ name: "", email: "", message: "" });
+        setSubmitStatus("idle");
+        onClose();
+      }, 2000);
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -138,7 +147,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-[#bec0dd]/50 focus:outline-none focus:border-[#cbacf9] focus:ring-1 focus:ring-[#cbacf9] transition-all"
-                          placeholder="John Doe"
+                          placeholder="Ismael"
                         />
                       </motion.div>
 
@@ -157,7 +166,7 @@ export function ContactModal({ isOpen, onClose }: ContactModalProps) {
                           onChange={handleChange}
                           required
                           className="w-full px-4 py-3 rounded-lg bg-white/5 border border-white/10 text-white placeholder-[#bec0dd]/50 focus:outline-none focus:border-[#cbacf9] focus:ring-1 focus:ring-[#cbacf9] transition-all"
-                          placeholder="john@example.com"
+                          placeholder="ismael@example.com"
                         />
                       </motion.div>
 
