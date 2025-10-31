@@ -32,7 +32,7 @@ const locationBadges = [
   },
 ];
 
-export const PortfolioSection = (): JSX.Element => {
+export const PortfolioSection = () => {
   return (
     <section className="relative w-full bg-[#000319] rounded-3xl overflow-hidden py-[65px] px-[100px]">
       <img

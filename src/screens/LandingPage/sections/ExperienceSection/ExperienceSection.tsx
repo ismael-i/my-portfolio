@@ -56,7 +56,7 @@ const experienceData = [
   },
 ];
 
-export const ExperienceSection = (): JSX.Element => {
+export const ExperienceSection = () => {
   return (
     <section className="relative w-full bg-[#000319] py-[70px] px-[99px]">
       <div className="flex flex-col items-center gap-[69px]">

@@ -7,7 +7,7 @@ const cornerImages = [
   { top: "top-[-18px]", left: "left-[360px]", alt: "Phpluslight" },
 ];
 
-export const CardDisplaySection = (): JSX.Element => {
+export const CardDisplaySection = () => {
   return (
     <div className="relative w-full h-[622px] rounded-[23px] border-[none] bg-[linear-gradient(150deg,rgba(4,7,29,1)_0%,rgba(12,14,35,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[23px] before:[background:linear-gradient(180deg,rgba(54,55,73,0.43)_0%,rgba(54,55,73,0.49)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none">
       {cornerImages.map((corner, index) => (

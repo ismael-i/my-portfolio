@@ -21,7 +21,7 @@ const navItems = [
   { label: "Contact", active: false },
 ];
 
-export const LandingPage = (): JSX.Element => {
+export const LandingPage = () => {
   return (
     <div className="bg-[#000319] overflow-hidden w-full min-w-[1440px] relative">
       <img
@@ -48,9 +48,8 @@ export const LandingPage = (): JSX.Element => {
             {navItems.map((item, index) => (
               <button
                 key={index}
-                className={`relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-medium text-base tracking-[-0.48px] leading-[17.6px] whitespace-nowrap ${
-                  item.active ? "text-white" : "text-[#c0c2d3]"
-                }`}
+                className={`relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-medium text-base tracking-[-0.48px] leading-[17.6px] whitespace-nowrap ${item.active ? "text-white" : "text-[#c0c2d3]"
+                  }`}
               >
                 {item.label}
               </button>

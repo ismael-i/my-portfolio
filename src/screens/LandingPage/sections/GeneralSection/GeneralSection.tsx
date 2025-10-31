@@ -1,6 +1,6 @@
 import React from "react";
 
-export const GeneralSection = (): JSX.Element => {
+export const GeneralSection = () => {
   return (
     <section className="w-full flex items-center justify-center py-8 px-4">
       <h1 className="max-w-[938px] [font-family:'Inter',Helvetica] font-bold text-transparent text-7xl text-center tracking-[-3.60px] leading-[72px]">
