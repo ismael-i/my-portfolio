@@ -13,7 +13,7 @@ const experiences = [
   },
   {
     id: 2,
-    title: 'Fullstack Developer - AFM ART',
+    title: 'Fullstack Developer - AFM ART Oct 2023 - Mars 2024',
     description: 'Developed web app and deploing using PHP and wordpress.',
     logo: '/frame-5.svg',
     mask: '/mask-group-3.png',
@@ -27,8 +27,8 @@ const experiences = [
   },
   {
     id: 4,
-    title: 'Freelance React/ Node js  Dev Project',
-    description: 'Developed and maintained user-facing features using modern technologies.',
+    title: 'Fullstack Developer - Eden distribution - Mars 2024 - Present',
+    description: 'Developed and maintained user-facing features using modern technologies. Deployed applications and ensured their scalability.',
     logo: '/Group2.svg',
     mask: '/mask-group-1.png',
   },
@@ -79,7 +79,7 @@ export function ExperienceSection() {
                       src={experience.logo}
                     />
                     <div className="flex flex-col gap-3">
-                      <h3 className="font-['Inter',Helvetica] font-bold text-white text-lg md:text-[26px] tracking-[-0.26px] leading-tight">
+                      <h3 className="font-['Inter',Helvetica] font-bold text-white text-md md:text-[20px] tracking-[-0.26px] leading-tight">
                         {experience.title}
                       </h3>
                       <p className="font-['Inter',Helvetica] font-medium text-[#bec0dd] text-sm md:text-base leading-relaxed">

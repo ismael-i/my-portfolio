@@ -9,7 +9,7 @@ const projects = [
     id: 1,
     title: 'Grand urban hotel',
     description: 'This project demonstrates my ability to transform a brand vision into a high-performing and aesthetically successful digital experience, essential for the luxury hospitality sector.',
-    image: '/image.png',
+    image: '/Image.png',
     mockup: '/ghu-image.png',
     technologies: [
       { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
@@ -23,7 +23,7 @@ const projects = [
     id: 2,
     title: 'Msomo wa mali - Android & IOS Application',
     description: 'A native financial education mobile app built on the latest React Native stack. Interactive courses and savings/loan simulations ensure complete mastery.',
-    image: '/image.png',
+    image: '/Image.png',
     mockup: '/iphone-image.png',
     technologies: [
       { src: '/react-svgrepo-com.svg', alt: 'React Native', id: 'react' },
@@ -31,13 +31,13 @@ const projects = [
       { src: '/typescript.svg', alt: 'TypeScript', id: 'typescript' },
       { src: '/firebase.svg', alt: 'Firebase', id: 'Firebase' },
     ],
-    link: '#',
+    link: 'https://drive.google.com/file/d/1WnkJENlZg340R2Dn8uOym1Y4X-l4QMHf/view?usp=drive_link',
   },
   {
     id: 3,
     title: 'MINUCIA, The communications agency',
     description: 'Your responsible communication agency. Built with Next.js for sustainable success. See our work, blog, and team.',
-    image: '/image.png',
+    image: '/Image.png',
     mockup: '/minucia.jpg',
     technologies: [
       { src: '/next.svg', alt: 'Next JS', id: 'Next' },
@@ -52,7 +52,7 @@ const projects = [
     id: 4,
     title: 'Elevating Business Operations',
     description: ' These projects highlight my expertise in building sophisticated enterprise-level applications with Next.js, demonstrating my ability to translate complex business requirements into efficient.',
-    image: '/image.png',
+    image: '/Image.png',
     mockup: '/edens.png',
     technologies: [
       { src: '/next.svg', alt: 'Next JS', id: 'Next' },

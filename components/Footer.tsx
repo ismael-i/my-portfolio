@@ -53,7 +53,7 @@ export function Footer() {
         className="relative max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 pt-12"
       >
         <div className="font-['Inter',Helvetica] font-normal text-white text-sm md:text-[14.4px] leading-6">
-          Copyright © 2024 Ismael Razafindramboly
+          Copyright © 2025 Ismael Razafindramboly - All Rights Reserved
         </div>
 
         <motion.div

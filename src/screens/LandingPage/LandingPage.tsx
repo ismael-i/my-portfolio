@@ -214,7 +214,7 @@ export const LandingPage = () => {
 
       <footer className="relative flex w-[1240px] items-center justify-between mx-auto pt-[100px] pb-[90px] bg-transparent">
         <div className="relative w-fit [font-family:'Inter',Helvetica] font-normal text-white text-[14.4px] tracking-[0] leading-6 whitespace-nowrap">
-          Copyright ©2024 John Doe
+          Copyright ©2025 Ismael Razafindramboly - All Rights Reserved
         </div>
 
         <img

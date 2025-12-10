@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Badge } from "../../../../components/ui/badge";
 import { Button } from "../../../../components/ui/button";
 import { Card, CardContent } from "../../../../components/ui/card";
@@ -33,6 +33,21 @@ const locationBadges = [
 ];
 
 export const PortfolioSection = () => {
+  const [isCopied, setIsCopied] = useState(false);
+
+  const handleCopyEmail = () => {
+    const email = "tonemail@example.com"; // Remplace par ton email réel
+    navigator.clipboard.writeText(email)
+      .then(() => {
+        setIsCopied(true);
+        setTimeout(() => {
+          setIsCopied(false);
+        }, 2000);
+      })
+      .catch((err) => {
+        console.error("Failed to copy: ", err);
+      });
+  };
   return (
     <section className="relative w-full bg-[#000319] rounded-3xl overflow-hidden py-[65px] px-[100px]">
       <img
@@ -205,14 +220,14 @@ export const PortfolioSection = () => {
                     Do you want to start a project together?
                   </h3>
 
-                  <Button className="inline-flex items-center justify-center gap-[5px] px-4 py-3 h-auto rounded-[7px] border-[none] rotate-180 bg-[linear-gradient(90deg,rgba(22,26,49,1)_0%,rgba(6,9,31,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[7px] before:[background:linear-gradient(180deg,rgba(105,113,162,0.4)_0%,rgba(39,42,60,0.5)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none hover:opacity-90">
+                  <Button className="inline-flex items-center justify-center gap-[5px] px-4 py-3 h-auto rounded-[7px] border-[none] rotate-180 bg-[linear-gradient(90deg,rgba(22,26,49,1)_0%,rgba(6,9,31,1)_100%)] before:content-[''] before:absolute before:inset-0 before:p-px before:rounded-[7px] before:[background:linear-gradient(180deg,rgba(105,113,162,0.4)_0%,rgba(39,42,60,0.5)_100%)] before:[-webkit-mask:linear-gradient(#fff_0_0)_content-box,linear-gradient(#fff_0_0)] before:[-webkit-mask-composite:xor] before:[mask-composite:exclude] before:z-[1] before:pointer-events-none relative z-[2] hover:opacity-90 cursor-pointer" onClick={handleCopyEmail}>
                     <img
                       className="relative w-3.5 h-3.5 -rotate-180"
                       alt="Email icon"
                       src="/card.svg"
                     />
                     <span className="relative flex items-center justify-center w-fit mt-[-1.00px] [font-family:'Inter',Helvetica] font-medium text-[#e4ecff] text-sm tracking-[-0.48px] leading-[16.8px] whitespace-nowrap">
-                      Copy my email address
+                      {isCopied ? "Email copied! ✓" : "Copy my email address"}
                     </span>
                   </Button>
                 </div>
